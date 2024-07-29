@@ -23,7 +23,7 @@ const App = () => {
           />
           <div
             className="preview">
-              {markdown}
+              <h1>{markdown}</h1>
               </div>
         </>
       )}
