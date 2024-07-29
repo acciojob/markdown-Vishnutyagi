@@ -10,6 +10,14 @@ const App = () => {
     setLoading(false);
   }, []);
 
+  const handleMarkdownChange = (e) => {
+    setMarkdown(e.target.value);
+  };
+
+  const createMarkup = () => {
+    return <h1>{markdown}</h1>;
+  };
+
   return (
     <div className="app">
       {loading ? (
@@ -19,12 +27,11 @@ const App = () => {
           <textarea
             className="textarea"
             value={markdown}
-            onChange={(e) => setMarkdown(e.target.value)}
+            onChange={handleMarkdownChange}
+            placeholder="Write your markdown here..."
           />
           <div
-            className="preview">
-              <h1>{markdown}</h1>
-              </div>
+            className="preview"><h1>{markdown}</h1></div>
         </>
       )}
     </div>
