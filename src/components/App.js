@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import marked from 'marked';
+import ReactMarkdown from 'react-markdown';
 import '../styles/App.css';
 
 const App = () => {
@@ -14,10 +14,6 @@ const App = () => {
     setMarkdown(e.target.value);
   };
 
-  const createMarkup = () => {
-    return <h1>{markdown}</h1>;
-  };
-
   return (
     <div className="app">
       {loading ? (
@@ -30,8 +26,9 @@ const App = () => {
             onChange={handleMarkdownChange}
             placeholder="Write your markdown here..."
           />
-          <div
-            className="preview"><h1>{markdown}</h1></div>
+          <div className="preview">
+            <ReactMarkdown>{markdown}</ReactMarkdown>
+          </div>
         </>
       )}
     </div>
